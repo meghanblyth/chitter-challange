@@ -1,4 +1,4 @@
-Chitter Challenge
+Chitter Challenge - By Meg and Dash
 =================
 
 * Feel free to use Google, your notes, books, etc. but work on your own
