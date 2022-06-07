@@ -2,12 +2,9 @@ const express = require('express')
 const router = express.Router()
 const { getPeeps, postPeeps, updatePeeps, deletePeeps } = require('../controllers/peepController')
 
-router.get('/', getPeeps)
+router.route('/').get(getPeeps).post(postPeeps)
 
-router.post('/', postPeeps)
-
-router.put('/:id', updatePeeps)
-
-router.delete('/:id', deletePeeps)
+router.route('/:id').delete(deletePeeps).put(updatePeeps)
 
 module.exports = router 
+
