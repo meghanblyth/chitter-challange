@@ -1,21 +1,13 @@
 const express = require('express')
 const router = express.Router()
+const { getPeeps, postPeeps, updatePeeps, deletePeeps } = require('../controllers/peepController')
 
-router.get('/', (req, res) => {
-  res.status(200).json({ message: 'Get peeps' })
-})
+router.get('/', getPeeps)
 
-router.post('/', (req, res) => {
-  res.status(200).json({ message: 'Post new peep' })
-})
+router.post('/', postPeeps)
 
-router.put('/:id', (req, res) => {
-  res.status(200).json({ message: `Update peep ${req.params.id}` })
-})
+router.put('/:id', updatePeeps)
 
-router.delete('/:id', (req, res) => {
-  res.status(200).json({ message: `Delete peep ${req.params.id}` })
-})
-
+router.delete('/:id', deletePeeps)
 
 module.exports = router 
