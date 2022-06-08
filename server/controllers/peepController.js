@@ -1,4 +1,4 @@
-const asyncHandler = require('express-asyncHandler')
+const asyncHandler = require('express-async-handler')
 
 const getPeeps = asyncHandler(async (req, res) => {
   res.status(200).json({ message: 'Get peeps' })
@@ -26,3 +26,4 @@ module.exports = {
   updatePeeps, 
   deletePeeps,
 }
+
