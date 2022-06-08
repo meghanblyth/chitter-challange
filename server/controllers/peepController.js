@@ -23,11 +23,33 @@ const postPeeps = asyncHandler(async (req, res) => {
 })
 
 const updatePeeps = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `Update peep ${req.params.id}` })
+
+  const peep = await Peep.findById(req.params.id)
+
+  if(!peep) {
+    res.status(400)
+    throw new Error('Peep does not exist')
+  }
+
+  const updatedPeep = await Peep.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  })
+
+  res.status(200).json(updatedPeep)
 })
 
 const deletePeeps = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: `Delete peep ${req.params.id}` })
+
+  const peep = await Peep.findById(req.params.id)
+
+  if(!peep) {
+    res.status(400)
+    throw new Error('Peep does not exist')
+  }
+
+  await peep.remove()
+
+  res.status(200).json({ id: req.params.id })
 })
 
 module.exports = {
