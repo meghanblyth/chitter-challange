@@ -4,6 +4,18 @@ const ListPeeps = () => {
   
   const [peeps, setPeeps] = useState([])
 
+  // const deletePeeps = async (id) => {
+  //   try {
+  //     const binPeep = await fetch(`http://localhost:5000/peeps/${id}`, {
+  //       method: "DELETE"
+  //     })
+  //     //console.log(binPeep)
+  //   setPeeps(peeps.filter(peep => peep.peeps_id !== id))
+  //   } catch (err) {
+  //     console.error(err.message)
+  //   }
+  // }
+
   const getPeeps = async () => {
     try { 
       const response = await fetch("http://localhost:5000/peeps") 
@@ -13,11 +25,11 @@ const ListPeeps = () => {
       console.error(err.message)
     }
   }
+
   useEffect(() => {
     getPeeps();
   }, []);
 
-  
   return (
     <Fragment> 
       <table className="table mt-5 text-centre">
@@ -30,7 +42,7 @@ const ListPeeps = () => {
         </thead>
         <tbody>
           {peeps.map(peep => (
-            <tr key={peep.peeps_id}>
+            <tr key={peep._id}>
               <td>{peep.text}</td>
               <td>Edit</td>
               <td>Delete</td>
