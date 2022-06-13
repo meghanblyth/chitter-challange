@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 const PostPeeps = () => {
-  const [peep, setPeep] = useState("")  
+  //const [peep, setPeep] = useState("")  
 
   return(
     <>
     <h1 className='text-center mt-5'>Post a NEW PEEPPPPPPP</h1>
-    <form>
+    <form className='d-flex'>
       <input type='text'/>
-      <button>Add Peep</button>
+      <button className='btn btn-success'>Add Peep</button>
     </form>
     </>
   )
