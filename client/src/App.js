@@ -1,7 +1,10 @@
+import ListPeeps from "./components/ListPeeps";
 
 function App() {
   return (
-    <h1>Hello world!</h1>
+    <div className="container">
+      <ListPeeps /> 
+    </div> 
   );
 }
 
