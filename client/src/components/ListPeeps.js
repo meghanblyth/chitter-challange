@@ -46,7 +46,9 @@ const ListPeeps = () => {
           {peeps.map(peep => (
             <tr key={peep._id}>
               <td>{peep.text}</td>
-              <td><EditPeeps/></td>
+              <td>
+                <EditPeeps/>
+              </td>
               <td><button className='btn btn-danger' onClick={() => deletePeep(peep._id)}>Delete</button></td>
             </tr>
           ))}
