@@ -9,8 +9,11 @@ const ListPeeps = () => {
     try {
       const deletePeep = await fetch(`http://localhost:5000/peeps/${id}`, {
         method: "DELETE"
-      })
+      });
+
+      setPeeps(peeps.filter(peep => peep._id !== id))
       console.log(deletePeep)
+
     } catch (err) {
       console.error(err.message)
     }

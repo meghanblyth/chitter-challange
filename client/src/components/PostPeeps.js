@@ -3,7 +3,6 @@ import React, {Fragment, useState} from 'react'
 const PostPeeps = () => {
   const [peep, setPeep] = useState("")  
   
-  
   const newPeep = async () => {
     try {
       await fetch("http://localhost:5000/peeps", {
@@ -32,6 +31,6 @@ const PostPeeps = () => {
     </form>
     </Fragment>
   )
-}
+} 
 
 export default PostPeeps;
