@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-
-
+import EditPeeps from './EditPeeps';
 
 const ListPeeps = () => {
   const [peeps, setPeeps] = useState([])
@@ -47,7 +46,7 @@ const ListPeeps = () => {
           {peeps.map(peep => (
             <tr key={peep._id}>
               <td>{peep.text}</td>
-              <td>Edit</td>
+              <td><EditPeeps/></td>
               <td><button className='btn btn-danger' onClick={() => deletePeep(peep._id)}>Delete</button></td>
             </tr>
           ))}
@@ -57,3 +56,4 @@ const ListPeeps = () => {
   )
 }
 export default ListPeeps; 
+
